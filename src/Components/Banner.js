@@ -6,7 +6,7 @@ const Banner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="w-[700px]">
-                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                    <h1 className="mb-5 text-5xl font-bold">Close To Nature</h1>
                     <p className="mb-5">Welcome To Our Website. We provide experienced photographers for wild live photography. We have many options, you can check out our services and the reviews of out customers. Lets explore the wildLife together!
                     </p>
                     <button className="btn btn-primary px-10">Explore</button>
