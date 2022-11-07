@@ -52,6 +52,7 @@ const Login = () => {
 
             .then((userCredential) => {
                 const user = userCredential.user;
+                console.log(user);
                 form.reset();
                 setError('');
                 // navigate(from, { replace: true });
