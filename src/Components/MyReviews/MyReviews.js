@@ -6,6 +6,7 @@ const MyReviews = () => {
 
     const { user, logOut } = useContext(AuthContext);
     const [reviews, setreviews] = useState([]);
+    const [allReviews, setAllReviews] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`
@@ -14,6 +15,30 @@ const MyReviews = () => {
             .then(data => setreviews(data))
     }, [user?.email, logOut])
 
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Do you want to Delete')
+        if (proceed) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE',
+
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('Deleted');
+                        const remaining = reviews.filter(ordr => ordr._id !== id);
+                        setreviews(remaining);
+                    }
+                })
+
+        }
+    }
 
 
 
@@ -41,7 +66,7 @@ const MyReviews = () => {
                             </th>
                             <th>Product</th>
                             <th>Customer</th>
-                            <th>Message</th>
+                            <th>Review</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -50,6 +75,8 @@ const MyReviews = () => {
                             reviews.map(revw => <MyReviewDetails
                                 key={revw._id}
                                 revw={revw}
+                                handleDelete={handleDelete}
+                            // handleUpdate={handleUpdate}
 
                             ></MyReviewDetails>)
                         }

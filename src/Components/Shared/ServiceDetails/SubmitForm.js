@@ -3,9 +3,9 @@ import { AuthContext } from '../../Context/AuthProv';
 
 const SubmitForm = ({ service }) => {
     const { user } = useContext(AuthContext);
-    console.log(service);
+    // console.log(service);
 
-    const { _id, name, price, duration, img, details, r1, r2, r3 } = service
+    const { _id, service_title, price, duration, img, details, r1, r2, r3 } = service
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,8 +18,8 @@ const SubmitForm = ({ service }) => {
         console.log(value);
 
         const reviewItems = {
-            service_id: _id,
-            service_title: name,
+            service: _id,
+            service_title,
             price,
             customer_name: namee,
             photo,

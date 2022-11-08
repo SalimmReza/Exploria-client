@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 
-const MyReviewDetails = ({ revw }) => {
+const MyReviewDetails = ({ revw, handleDelete }) => {
 
 
-    const { _id, customer_name, price, email, service_title, service_id, photo, review } = revw
+    const { _id, customer_name, price, email, service_title, service, photo, review } = revw
 
-    // console.log(service_id);
+    console.log(service);
 
 
     const [reviewDetails, setReviewDetails] = useState({})
     console.log(reviewDetails);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service_id}`)
+        fetch(`http://localhost:5000/services/${service}`)
             .then(res => res.json())
             .then(data => setReviewDetails(data))
-    }, [service_id])
+    }, [service])
 
     return (
         <tr>
             <th>
-                {/* <label>
+                <label>
                     <button onClick={() => handleDelete(_id)} className="btn btn-ghost">X</button>
-                </label> */}
+                </label>
             </th>
             <td>
                 <div className="flex items-center space-x-3">
