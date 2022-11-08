@@ -5,6 +5,8 @@ import useTitle from '../Hooks/UseTitle';
 import Banner from './Banner';
 import CloseToNature from './CloseToNature';
 import Service from './Service';
+import Resizable from './Slick';
+import SimpleSlider from './Slick';
 
 
 
@@ -14,6 +16,7 @@ const Home = () => {
     useTitle('Home')
     return (
         <div >
+            <Resizable></Resizable>
             <Banner></Banner>
             <div className='w-[80%] mx-auto my-20'>
                 <CloseToNature></CloseToNature>

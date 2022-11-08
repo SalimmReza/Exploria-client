@@ -76,7 +76,7 @@ const SubmitForm = ({ service }) => {
                             <label className="label">
                                 <span className="label-text font-medium">Review</span>
                             </label>
-                            <textarea className="textarea textarea-bordered" placeholder="Your Review" name='review'></textarea>
+                            <textarea className="textarea textarea-bordered" placeholder="Your Review" name='review' maxlength="40"></textarea>
 
                         </div>
                         <button
