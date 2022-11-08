@@ -12,7 +12,7 @@ const Register = () => {
 
     const provider = new GoogleAuthProvider();
 
-    // const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleClick = () => {
         googleSignIn(provider)
@@ -22,7 +22,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 setError('');
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
 
             }).catch((error) => {
                 const errorCode = error.code;
