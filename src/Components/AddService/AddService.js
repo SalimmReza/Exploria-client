@@ -10,14 +10,14 @@ const AddService = () => {
 
         const field = e.target;
         const service_title = field.name.value;
-        // const price = field.price.value;
+        const price = field.price.value;
         const duration = field.duration.value;
         const details = field.description.value;
         const img = field.photo.value;
 
         const services = {
             service_title,
-            // price,
+            price,
             duration,
             details,
             img
@@ -50,10 +50,10 @@ const AddService = () => {
 
             <div className='grid grid-cols-2 gap-4'>
 
-                <input name="name" type="text" placeholder="service Name" className="input input-bordered input-primary w-full " />
-                <input name="Price" type="text" placeholder="Price" className="input input-bordered input-primary w-full " />
-                <input name="duration" type="text" placeholder="Duration" className="input input-bordered input-primary w-full " />
-                <input name="photo" type="text" placeholder="PhotoUrl" className="input input-bordered input-primary w-full " />
+                <input name="name" type="text" placeholder="service Name" className=" w-full " />
+                <input name="price" type="text" placeholder="Price" className=" w-full " defaultValue="$" />
+                <input name="duration" type="text" placeholder="Duration" className=" w-full " />
+                <input name="photo" type="text" placeholder="PhotoUrl" className=" w-full " />
 
 
             </div>

@@ -1,11 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Context/AuthProv';
 
 const SubmitForm = ({ service }) => {
     const { user } = useContext(AuthContext);
+
+    const [reviews, setreviews] = useState([]);
     // console.log(service);
 
     const { _id, service_title, price, duration, img, details, r1, r2, r3 } = service
+
+    function refreshPage() {
+        window.location.reload(false);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,6 +44,8 @@ const SubmitForm = ({ service }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+
+
             })
 
 

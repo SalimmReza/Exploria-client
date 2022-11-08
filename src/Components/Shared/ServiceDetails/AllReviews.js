@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 const AllReviews = ({ rev }) => {
     // console.log(rev);
 
-    const { _id, customer_name, price, email, service_title, service, photo, review } = rev
-    console.log(service);
+    const { service, review } = rev
+    // console.log(service_title);
 
 
     const [reviews, setreviews] = useState([]);
@@ -14,11 +14,11 @@ const AllReviews = ({ rev }) => {
         fetch(`http://localhost:5000/reviewspecific?service=${service}`
         )
             .then(res => res.json())
-            .then(data => setreviews(data))
+            .then(data => {
+                // console.log(data);
+
+            })
     }, [service])
-
-
-
 
     return (
         <div>

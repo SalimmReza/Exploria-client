@@ -21,11 +21,11 @@ const ServiceDetails = () => {
     // console.log(reviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`
+        fetch(`http://localhost:5000/reviewspecific?service=${_id}`
         )
             .then(res => res.json())
             .then(data => setreviews(data))
-    }, [])
+    }, [_id])
 
     return (
         <div>
