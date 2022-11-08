@@ -4,7 +4,8 @@ import Footer from "../Components/Footer";
 import Home from "../Components/Home";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
-import ServiceDetails from "../Components/Shared/ServiceDetails";
+import ServiceDetails from "../Components/Shared/ServiceDetails/ServiceDetails";
+
 import Main from "../Layout/Main";
 
 export const router = createBrowserRouter([

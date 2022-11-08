@@ -60,7 +60,7 @@ const Nav = () => {
                     user?.photoURL ?
                         <div className="avatar">
                             <div className="w-12">
-                                <img className='rounded-xl' src={user.photoURL} />
+                                <img className='rounded-xl' src={user.photoURL} alt='' />
                             </div>
                         </div>
                         :
