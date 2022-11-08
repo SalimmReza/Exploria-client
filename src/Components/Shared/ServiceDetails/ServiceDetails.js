@@ -15,7 +15,7 @@ const ServiceDetails = () => {
 
             {
                 user?.email ? <div>
-                    <SubmitForm></SubmitForm>
+                    <SubmitForm service={service}></SubmitForm>
 
                     <div className='w-[80%] mx-auto'>
                         <div className="card lg:card-side bg-base-100 drop-shadow-xl my-10 h-full">
@@ -52,6 +52,7 @@ const ServiceDetails = () => {
                                     src={img} alt="" /></figure></PhotoView></PhotoProvider>
 
                                 <div className="card-body">
+                                    <Link className='text-blue-500' to='/login'> <p>Please login to add a review</p></Link>
                                     <h2 className="card-title">{name}</h2>
                                     <p className='w-[400px]'>{details}</p>
                                     <p className='text-red-500'>Price: {price} <span className='text-black font-semibold'>for {duration}</span></p>

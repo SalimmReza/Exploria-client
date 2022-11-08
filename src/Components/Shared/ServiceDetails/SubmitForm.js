@@ -1,18 +1,47 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProv';
 
-const SubmitForm = () => {
+const SubmitForm = ({ service }) => {
     const { user } = useContext(AuthContext);
+    console.log(service);
+
+    const { _id, name, price, duration, img, details, r1, r2, r3 } = service
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
+        const namee = form.namee.value;
         const photo = user?.photoURL || 'No Photo'
         const review = form.review.value;
 
-        const value = { name, photo, review }
+        const value = { namee, photo, review }
         console.log(value);
+
+        const reviewItems = {
+            service_id: _id,
+            service_title: name,
+            price,
+            customer_name: namee,
+            photo,
+            review,
+            email: user.email
+
+        }
+
+        fetch(`http://localhost:5000/reviews`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviewItems)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
+
+
     }
     return (
         <div>
@@ -26,7 +55,7 @@ const SubmitForm = () => {
                             <label className="label">
                                 <span className="label-text font-medium">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Name" defaultValue={user?.displayName} className="input input-bordered" />
+                            <input type="text" name='namee' placeholder="Name" defaultValue={user?.displayName} className="input input-bordered" />
                         </div>
                         <div className="form-control">
 
