@@ -17,7 +17,7 @@ const CloseToNature = () => {
 
                     </div>
                     <div className='w-[40%] flex flex-col items-start'>
-                        <p className='font-bold text-black flex my-3'>Out Collections</p>
+                        <p className='font-bold text-black flex my-3'>Collections</p>
                         <h1 className="text-5xl font-bold text-justify text-red-600">Close To Nature</h1>
                         <p className="py-6 text-justify">Look deep into nature, and then you will understand everything better.The continued existence of wildlife and wilderness is important to the quality of life of humans</p>
 

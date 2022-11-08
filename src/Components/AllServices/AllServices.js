@@ -9,7 +9,7 @@ const AllServices = () => {
 
 
             <div className='w-[80%] mx-auto my-20'>
-                <h1 className='text-black font-bold text-3xl my-20 text-center'>Our services</h1>
+                <h1 className='text-black font-bold text-3xl my-20 text-center'>All services</h1>
                 {
                     services.map(service => <AllService
                         key={service._id}

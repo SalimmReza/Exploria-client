@@ -13,12 +13,7 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_appId
 
 
-    // apiKey: "AIzaSyBGClGtFCqEMZ3zmnn2-yuJWsU3_-Gx1Ug",
-    // authDomain: "assignment11-cb917.firebaseapp.com",
-    // projectId: "assignment11-cb917",
-    // storageBucket: "assignment11-cb917.appspot.com",
-    // messagingSenderId: "94693828656",
-    // appId: "1:94693828656:web:086a43633ffbb11949e5f5"
+
 };
 
 // Initialize Firebase
