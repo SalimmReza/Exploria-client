@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './Context/AuthProv';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -24,17 +34,43 @@ const Nav = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to="/login">Login</Link></li>
+                    {
+                        user?.email ?
+                            <>
+                                <li><Link>My Reviews</Link></li>
+                                <li><Link>Add Service</Link></li>
+                                <li><Link><button onClick={handleLogout}
+                                    className="btn btn-ghost">LogOut</button></Link></li>
+                            </>
+                            :
+                            ""
 
-                    <li><a>Item 3</a></li>
+
+                    }
+
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                {
+                    user?.photoURL ?
+                        <div className="avatar">
+                            <div className="w-12">
+                                <img className='rounded-xl' src={user.photoURL} />
+                            </div>
+                        </div>
+                        :
+                        <div>
+                            <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+
+                        </div>
+
+
+                }
             </div>
         </div>
     );
