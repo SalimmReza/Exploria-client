@@ -6,12 +6,12 @@ import AllReviews from './AllReviews';
 import SubmitForm from './SubmitForm';
 
 const ServiceDetails = () => {
-    const service = useLoaderData();
+    const services = useLoaderData();
     const { user } = useContext(AuthContext)
     // console.log(user);
 
     const { _id,
-        service_title, price, duration, img, details, r1, r2, r3 } = service
+        service_title, price, duration, img, details, r1, r2, r3 } = services
 
     // console.log(service);
 
@@ -32,7 +32,7 @@ const ServiceDetails = () => {
 
             {
                 user?.email ? <div>
-                    <SubmitForm service={service}></SubmitForm>
+                    <SubmitForm services={services}></SubmitForm>
 
                     <div className='w-[80%] mx-auto'>
                         <div className="card lg:card-side bg-base-100 drop-shadow-xl my-10 h-full">

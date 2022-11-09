@@ -1,13 +1,25 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProv';
 
-const SubmitForm = ({ service }) => {
+const SubmitForm = ({ services }) => {
+
     const { user } = useContext(AuthContext);
 
     const [reviews, setreviews] = useState([]);
-    // console.log(service);
+    console.log(reviews);
+    const [update, setUpdate] = useState(false);
+    // console.log(services);
+    const navigate = useNavigate();
 
-    const { _id, service_title, price, duration, img, details, r1, r2, r3 } = service
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviewspecific?service=${services._id}`)
+            .then(res => res.json())
+            .then(data => setreviews(data));
+
+    }, [services._id, update])
+
+    const { _id, service_title, price, duration, img, details, r1, r2, r3 } = services
 
     function refreshPage() {
         window.location.reload(false);
@@ -43,9 +55,14 @@ const SubmitForm = ({ service }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
+                if (data.acknowledged) {
+                    alert('added successfully')
+                    // setUpdate(!update)
 
+                    navigate(`/services/${_id}`)
 
+                }
             })
 
 

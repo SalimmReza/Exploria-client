@@ -7,7 +7,7 @@ import Resizable from '../../Slick';
 
 
 const AllReviews = ({ rev }) => {
-    console.log(rev);
+    // console.log(rev);
 
     const { service, review, photo, customer_name } = rev
     // console.log(service_title);
