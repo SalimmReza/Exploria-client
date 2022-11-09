@@ -25,11 +25,11 @@ const ServiceDetails = () => {
         )
             .then(res => res.json())
             .then(data => setreviews(data))
-    }, [_id])
+    }, [_id, reviews])
 
     return (
         <div>
-
+            <h1>{reviews.length}</h1>
             {
                 user?.email ? <div>
                     <SubmitForm services={services}></SubmitForm>

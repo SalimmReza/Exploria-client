@@ -47,6 +47,7 @@ const SubmitForm = ({ services }) => {
         }
 
         fetch(`http://localhost:5000/reviews`, {
+
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,12 +56,12 @@ const SubmitForm = ({ services }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 if (data.acknowledged) {
                     alert('added successfully')
                     // setUpdate(!update)
 
-                    navigate(`/services/${_id}`)
+                    // navigate(`/services/${_id}`)
 
                 }
             })
