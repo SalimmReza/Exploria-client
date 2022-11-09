@@ -50,17 +50,17 @@ const AddService = () => {
 
             <div className='grid grid-cols-2 gap-4'>
 
-                <input name="name" type="text" placeholder="service Name" className=" w-full " />
-                <input name="price" type="text" placeholder="Price" className=" w-full " defaultValue="$" />
-                <input name="duration" type="text" placeholder="Duration" className=" w-full " />
-                <input name="photo" type="text" placeholder="PhotoUrl" className=" w-full " />
+                <input name="name" type="text" required placeholder="service Name" className=" w-full border-2 rounded-lg p-2 border-indigo-500 " />
+                <input name="price" type="text" required placeholder="Price" className=" w-full border-2 rounded-lg p-2 border-indigo-500 " defaultValue="$" />
+                <input name="duration" type="text" required placeholder="Duration" className=" w-full border-2 rounded-lg p-2 border-indigo-500" />
+                <input name="photo" type="text" required placeholder="PhotoUrl" className=" w-full border-2 rounded-lg p-2 border-indigo-500 " />
 
 
             </div>
 
             <textarea name='description' className="textarea textarea-primary mt-5 w-full h-[150px]" placeholder="Description"></textarea>
 
-            <button type='submit' className="btn  bg-red-600 border-0 hover:bg-yellow-500 mt-10 w-full">Add Service</button>
+            <button type='submit' className="btn  bg-blue-600 border-0 hover:bg-yellow-500 mt-10 w-full">Add Service</button>
         </form>
     );
 };

@@ -7,6 +7,7 @@ import Footer from "../Components/Footer";
 import Home from "../Components/Home";
 import Login from "../Components/Login";
 import MyReviews from "../Components/MyReviews/MyReviews";
+import Update from "../Components/MyReviews/Update";
 import Register from "../Components/Register";
 import ServiceDetails from "../Components/Shared/ServiceDetails/ServiceDetails";
 
@@ -52,6 +53,13 @@ export const router = createBrowserRouter([
                 path: '/addservice',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
+
+            {
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+
+            }
 
 
 

@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyReviewDetails = ({ revw, handleDelete }) => {
 
 
     const { _id, customer_name, price, email, service_title, service, photo, review } = revw
 
-    console.log(service);
+    //console.log(revw);
 
 
     const [reviewDetails, setReviewDetails] = useState({})
-    console.log(reviewDetails);
+    // console.log(reviewDetails);
 
     useEffect(() => {
         fetch(`http://localhost:5000/services/${service}`)
@@ -48,11 +49,11 @@ const MyReviewDetails = ({ revw, handleDelete }) => {
             </td>
             <td>{review}</td>
             <th>
-                {/* <button
-                    onClick={() => handleUpdate(_id)}
-                    className="btn btn-ghost btn-xs lowercase">{
-                        status ? status : 'Pending'
-                    }</button> */}
+
+                <Link to={`/update/${_id}`}>  <button
+                    className="btn btn-ghost btn-xs lowercase">
+                    Update
+                </button></Link>
             </th>
         </tr>
     );
