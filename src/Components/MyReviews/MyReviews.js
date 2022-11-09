@@ -1,11 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthProv';
 import MyReviewDetails from './MyReviewDetails';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const MyReviews = () => {
+    const notify = () => toast("Deleted Successfully");
 
     const { user, logOut } = useContext(AuthContext);
     const [reviews, setreviews] = useState([]);
+    console.log(reviews);
     const [allReviews, setAllReviews] = useState([]);
 
     useEffect(() => {
@@ -31,7 +36,7 @@ const MyReviews = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        alert('Deleted');
+                        notify();
                         const remaining = reviews.filter(ordr => ordr._id !== id);
                         setreviews(remaining);
                     }
@@ -40,21 +45,9 @@ const MyReviews = () => {
         }
     }
 
-
-
-
-
     return (
-        <div className='w-[80%] mx-auto'>
+        <div className='w-[80%] mx-auto  mb-[480px]' >
 
-            <div className='relative'>
-                {/* <img className='w-full' src={img} alt="" /> */}
-                <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-20  top-[50%]">
-                    <h1 className='text-white text-3xl font-bold'>
-                        Cart Details
-                    </h1>
-                </div>
-            </div>
 
 
             <div className="overflow-x-auto w-full my-28">
@@ -71,7 +64,11 @@ const MyReviews = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
+
+                        {
+                            reviews.length === 0 ? <h1 className='text-center font-bold text-2xl text-red-500'>No Reviews Yet! Go to service details to review the item!</h1> : ""
+                        }
                         {
                             reviews.map(revw => <MyReviewDetails
                                 key={revw._id}
@@ -86,7 +83,8 @@ const MyReviews = () => {
 
                 </table>
             </div>
-        </div>
+            <ToastContainer></ToastContainer>
+        </div >
     );
 };
 

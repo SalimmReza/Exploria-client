@@ -57,9 +57,7 @@ const ServiceDetails = () => {
                                         ></AllReviews>)
                                     }
                                 </div>
-                                <div className="card-actions justify-end">
-                                    <Link to={`/services/${_id}`}><button className="btn btn-primary">Details</button></Link>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -85,12 +83,20 @@ const ServiceDetails = () => {
                                         service_title}</h2>
                                     <p className='w-[400px]'>{details}</p>
                                     <p className='text-red-500'>Price: {price} <span className='text-black font-semibold'>for {duration}</span></p>
+                                    <p className='text-green-500'>Out Personal Review</p>
                                     <p>{r1}</p>
                                     <p>{r2}</p>
                                     <p>{r3}</p>
-                                    <div className="card-actions justify-end">
-                                        <Link to={`/services/${_id}`}><button className="btn btn-primary">Details</button></Link>
+                                    <h1 className='text-[12px] font-semibold text-red-500'>Our Customer's Reviews</h1>
+                                    <div className=''>
+
+                                        {
+                                            reviews.map(rev => <AllReviews
+                                                rev={rev}
+                                            ></AllReviews>)
+                                        }
                                     </div>
+
                                 </div>
                             </div>
                         </div>

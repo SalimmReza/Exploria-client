@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const MyReviewDetails = ({ revw, handleDelete }) => {
 
 
     const { _id, customer_name, price, email, service_title, service, photo, review } = revw
 
-    //console.log(revw);
+    // console.log(revw);
 
 
     const [reviewDetails, setReviewDetails] = useState({})
@@ -20,9 +22,10 @@ const MyReviewDetails = ({ revw, handleDelete }) => {
 
     return (
         <tr>
+
             <th>
                 <label>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-ghost">X</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-ghost"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
                 </label>
             </th>
             <td>

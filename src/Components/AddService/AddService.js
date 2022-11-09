@@ -1,8 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const AddService = () => {
-
+    const notify = () => toast("Service Added Successfully");
 
 
     const handleADD = (e) => {
@@ -37,7 +40,8 @@ const AddService = () => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('added successfully')
+                    // alert('added successfully')
+                    notify()
                     field.reset();
                 }
             })
@@ -61,7 +65,11 @@ const AddService = () => {
             <textarea name='description' className="textarea textarea-primary mt-5 w-full h-[150px]" placeholder="Description"></textarea>
 
             <button type='submit' className="btn  bg-blue-600 border-0 hover:bg-yellow-500 mt-10 w-full">Add Service</button>
+
+            <ToastContainer />
         </form>
+
+
     );
 };
 

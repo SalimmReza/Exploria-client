@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from './Context/AuthProv';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Nav = () => {
 
@@ -14,6 +15,10 @@ const Nav = () => {
     }
     return (
         <div className="navbar bg-base-100 shadow-xl">
+
+
+
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,11 +44,13 @@ const Nav = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 font-semibold">
                     <li><Link to="/login">Login</Link></li>
+                    <li><Link to='/blog'>Blog</Link></li>
                     {
                         user?.email ?
                             <>
                                 <li><Link to='/reviews'>My Reviews</Link></li>
-                                <li><Link to='addservice'>Add Service</Link></li>
+                                <li><Link to='/addservice'>Add Service</Link></li>
+
                                 <li><Link><button onClick={handleLogout}
                                     className="btn btn-ghost">LogOut</button></Link></li>
                             </>
@@ -52,6 +59,7 @@ const Nav = () => {
 
 
                     }
+
 
                 </ul>
             </div>

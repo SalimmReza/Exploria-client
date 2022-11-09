@@ -1,8 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProv';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SubmitForm = ({ services }) => {
+
+    const notify = () => toast("Review Added Successfully");
 
     const { user } = useContext(AuthContext);
 
@@ -58,10 +62,9 @@ const SubmitForm = ({ services }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('added successfully')
-                    // setUpdate(!update)
+                    form.reset();
+                    notify();
 
-                    // navigate(`/services/${_id}`)
 
                 }
             })
@@ -94,7 +97,7 @@ const SubmitForm = ({ services }) => {
                             <label className="label">
                                 <span className="label-text font-medium">Review</span>
                             </label>
-                            <textarea className="textarea textarea-bordered" placeholder="Your Review" name='review' maxlength="40"></textarea>
+                            <textarea className="textarea textarea-bordered" placeholder="Your Review" name='review' maxlength="40" required></textarea>
 
                         </div>
                         <button
@@ -103,6 +106,8 @@ const SubmitForm = ({ services }) => {
                     </div>
                 </form>
             </div>
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
