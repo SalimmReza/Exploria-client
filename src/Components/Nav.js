@@ -32,7 +32,7 @@ const Nav = () => {
                             user?.email ?
                                 <>
                                     <li><Link to='/reviews'>My Reviews</Link></li>
-                                    <li><Link to='/addservice'>Add Service</Link></li>
+                                    <li><Link to='/addService'>Add Service</Link></li>
 
                                     <li><Link><button onClick={handleLogout}
                                         className="btn btn-ghost">LogOut</button></Link></li>
@@ -55,7 +55,7 @@ const Nav = () => {
                         user?.email ?
                             <>
                                 <li><Link to='/reviews'>My Reviews</Link></li>
-                                <li><Link to='/addservice'>Add Service</Link></li>
+                                <li><Link to='/addService'>Add Service</Link></li>
 
                                 <li><Link><button onClick={handleLogout}
                                     className="btn btn-ghost">LogOut</button></Link></li>

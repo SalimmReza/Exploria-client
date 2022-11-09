@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Form, Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../../Hooks/UseTitle';
 import { AuthContext } from '../../Context/AuthProv';
 import AllReviews from './AllReviews';
 import SubmitForm from './SubmitForm';
 
 const ServiceDetails = () => {
+    useTitle('Service-Details')
     const services = useLoaderData();
     const { user } = useContext(AuthContext)
     // console.log(user);

@@ -3,9 +3,11 @@ import { AuthContext } from '../Context/AuthProv';
 import MyReviewDetails from './MyReviewDetails';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import useTitle from '../../Hooks/UseTitle';
 
 
 const MyReviews = () => {
+    useTitle('My-Reviews')
     const notify = () => toast("Deleted Successfully");
 
     const { user, logOut } = useContext(AuthContext);
@@ -66,9 +68,7 @@ const MyReviews = () => {
                     </thead>
                     <tbody >
 
-                        {
-                            reviews.length === 0 ? <h1 className='text-center font-bold text-2xl text-red-500'>No Reviews Yet! Go to service details to review the item!</h1> : ""
-                        }
+
                         {
                             reviews.map(revw => <MyReviewDetails
                                 key={revw._id}
@@ -82,6 +82,10 @@ const MyReviews = () => {
 
 
                 </table>
+
+                {
+                    reviews.length === 0 ? <h1 className='text-center font-bold text-2xl text-red-500 my-10'>No Reviews Yet! Go to service details to review the item!</h1> : ""
+                }
             </div>
             <ToastContainer></ToastContainer>
         </div >

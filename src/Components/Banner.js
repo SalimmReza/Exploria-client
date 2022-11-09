@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -15,9 +15,8 @@ const Banner = () => {
                     <h1 className="mb-5 text-5xl font-bold">Close To Nature</h1>
                     <p className="mb-5">Welcome To Our Website. We provide experienced photographers for wild live photography. We have many options, you can check out our services and the reviews of out customers. Lets explore the wildLife together!
                     </p>
-                    <button
-
-                        className="btn btn-primary px-10">Explore</button>
+                    <Link to='/services'><button
+                        className="btn btn-primary px-10">Explore</button></Link>
                 </div>
             </div>
         </div>

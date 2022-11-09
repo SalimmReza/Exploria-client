@@ -29,7 +29,7 @@ const Home = () => {
             <div className='w-[80%] mx-auto my-20'>
                 <h1 className='text-black font-bold text-3xl my-20 text-center'>Our services</h1>
                 {
-                    services.slice(0, 3).map(service => <Service
+                    services.map(service => <Service
                         key={service._id}
                         service={service}
                     ></Service>).reverse()
@@ -37,7 +37,7 @@ const Home = () => {
 
 
                 <div className='flex justify-center items-center'>
-                    <Link to='/allservices'><button class="btn btn-outline btn-primary px-10">See All</button></Link>
+                    <Link to='/services'><button class="btn btn-outline btn-primary px-10">See All</button></Link>
                 </div>
             </div>
 

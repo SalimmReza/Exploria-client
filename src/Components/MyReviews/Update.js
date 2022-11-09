@@ -1,7 +1,12 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import useTitle from '../../Hooks/UseTitle';
 
 const Update = () => {
+    useTitle('Update')
+    const notify = () => toast("Updated Successfully");
     const navigation = useNavigate()
     const update = useLoaderData();
     console.log(update);
@@ -29,8 +34,11 @@ const Update = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('updated successfully')
+
+                    alert('updated')
+                    // notify()
                     field.reset()
+
                     navigation('/reviews');
 
                 }
@@ -55,8 +63,10 @@ const Update = () => {
 
                 <textarea name='review' className="textarea textarea-primary mt-5 w-full h-[150px]" placeholder="Review" defaultValue={review}></textarea>
 
-                <button type='submit' className="btn  bg-blue-600 border-0 hover:bg-yellow-500 mt-10 w-full">Add Service</button>
+                <button type='submit' className="btn  bg-blue-600 border-0 hover:bg-yellow-500 mt-10 w-full">Update Review</button>
+                <ToastContainer></ToastContainer>
             </form>
+
         </div>
     );
 };

@@ -1,9 +1,11 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../Hooks/UseTitle";
 import { AuthContext } from "./Context/AuthProv";
 
 const Register = () => {
+    useTitle('Register')
 
     const [error, setError] = useState("")
     const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext);
@@ -124,14 +126,14 @@ const Register = () => {
                                 <img onClick={handleGoogleClick}
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5q0FP74VV9wbfwP378_7kj7iDomHuKrxkXsxDdUT28V9dlVMNUe-EMzaLwaFhneeuZI&usqp=CAU" alt='' />
                             </div>
-                            <div className="w-9 h-9 rounded-full">
+                            {/* <div className="w-9 h-9 rounded-full">
                                 <img className=''
                                     src="https://www.pngitem.com/pimgs/m/0-6762_circle-fb-logo-icon-photos-facebook-circle-fb.png" alt='' />
                             </div>
                             <div className="w-9 h-9 rounded-full">
                                 <img className=''
                                     src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt='' />
-                            </div>
+                            </div> */}
 
                         </div>
 

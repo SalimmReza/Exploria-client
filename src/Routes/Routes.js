@@ -24,10 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(`http://localhost:5000/services`)
+                loader: () => fetch(`http://localhost:5000/servicesThree`)
             },
             {
-                path: '/allservices',
+                path: '/services',
                 element: <AllServices></AllServices>,
                 loader: () => fetch(`http://localhost:5000/services`)
             },
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
-                path: '/addservice',
+                path: '/addService',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
 

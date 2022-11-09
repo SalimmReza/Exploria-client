@@ -2,9 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../Hooks/UseTitle';
 
 
 const AddService = () => {
+    useTitle('Add-Service')
     const notify = () => toast("Service Added Successfully");
 
 
