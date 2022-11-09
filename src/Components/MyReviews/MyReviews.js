@@ -76,7 +76,7 @@ const MyReviews = () => {
                                 handleDelete={handleDelete}
                             // handleUpdate={handleUpdate}
 
-                            ></MyReviewDetails>)
+                            ></MyReviewDetails>).reverse()
                         }
                     </tbody>
 

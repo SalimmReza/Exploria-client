@@ -46,7 +46,8 @@ const SubmitForm = ({ services }) => {
             customer_name: namee,
             photo,
             review,
-            email: user.email
+            email: user.email,
+            dateAdded: new Date()
 
         }
 

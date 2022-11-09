@@ -14,7 +14,7 @@ const AllServices = () => {
                     services.map(service => <AllService
                         key={service._id}
                         service={service}
-                    ></AllService>)
+                    ></AllService>).reverse()
                 }
             </div>
 

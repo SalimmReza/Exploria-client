@@ -27,6 +27,7 @@ const ServiceDetails = () => {
             .then(data => setreviews(data))
     }, [_id, reviews])
 
+
     return (
         <div>
             <h1>{reviews.length}</h1>
@@ -54,7 +55,7 @@ const ServiceDetails = () => {
                                     {
                                         reviews.map(rev => <AllReviews
                                             rev={rev}
-                                        ></AllReviews>)
+                                        ></AllReviews>).reverse()
                                     }
                                 </div>
 

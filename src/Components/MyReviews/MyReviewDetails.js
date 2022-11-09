@@ -6,9 +6,9 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 const MyReviewDetails = ({ revw, handleDelete }) => {
 
 
-    const { _id, customer_name, price, email, service_title, service, photo, review } = revw
+    const { _id, customer_name, price, email, service_title, service, photo, review, dateAdded } = revw
 
-    // console.log(revw);
+    console.log(revw);
 
 
     const [reviewDetails, setReviewDetails] = useState({})
@@ -49,6 +49,7 @@ const MyReviewDetails = ({ revw, handleDelete }) => {
                 {customer_name}
                 <br />
                 <span className="badge badge-ghost badge-sm">{email}</span>
+                {dateAdded}
             </td>
             <td>{review}</td>
             <th>

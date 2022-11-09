@@ -32,7 +32,7 @@ const Home = () => {
                     services.slice(0, 3).map(service => <Service
                         key={service._id}
                         service={service}
-                    ></Service>)
+                    ></Service>).reverse()
                 }
 
 
