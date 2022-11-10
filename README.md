@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+# Exploria
+Link: https://assignment11-cb917.web.app/
+
+- use firebase auth
+- used Crud operation
+- a user can add service can review a specific service can view its al reviews can see what other are reviewing
+- user can  post a new service
+- user can update delete reviews he gave
+
+- Technologies used: mongodb , jwt, node, express, react, react router and many more
+
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
