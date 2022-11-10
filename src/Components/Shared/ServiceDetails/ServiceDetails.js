@@ -10,7 +10,7 @@ import SubmitForm from './SubmitForm';
 const ServiceDetails = () => {
     useTitle('Service-Details')
     const services = useLoaderData();
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
 
     const [reviews, setreviews] = useState([]);
@@ -29,16 +29,23 @@ const ServiceDetails = () => {
     // console.log(reviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewspecific?service=${_id}`
+        fetch(`http://localhost:5000/reviewspecific?service=${_id}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }
         )
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut()
+                }
+                return res.json()
+            })
             .then(data => setreviews(data))
-    }, [_id, reviews])
+    }, [_id, reviews, logOut])
 
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-
-
     return (
         <div>
 

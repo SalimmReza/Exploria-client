@@ -16,9 +16,18 @@ const MyReviews = () => {
     const [allReviews, setAllReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }
         )
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut()
+                }
+                return res.json()
+            })
             .then(data => setreviews(data))
     }, [user?.email, logOut])
 
