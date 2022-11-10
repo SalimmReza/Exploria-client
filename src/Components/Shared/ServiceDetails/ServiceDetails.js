@@ -29,7 +29,7 @@ const ServiceDetails = () => {
     // console.log(reviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewspecific?service=${_id}`, {
+        fetch(`https://assignment-11-server-xi.vercel.app/reviewspecific?service=${_id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }

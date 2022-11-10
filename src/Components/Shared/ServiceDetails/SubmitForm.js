@@ -17,7 +17,7 @@ const SubmitForm = ({ services }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewspecific?service=${services._id}`)
+        fetch(`https://assignment-11-server-xi.vercel.app/reviewspecific?service=${services._id}`)
             .then(res => res.json())
             .then(data => setreviews(data));
 
@@ -51,7 +51,7 @@ const SubmitForm = ({ services }) => {
 
         }
 
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://assignment-11-server-xi.vercel.app/reviews`, {
 
             method: 'POST',
             headers: {

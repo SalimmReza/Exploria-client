@@ -23,7 +23,7 @@ const Update = () => {
         const user = { service_title, email, customer_name, review };
         console.log(user);
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://assignment-11-server-xi.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -4,7 +4,7 @@ export const setLoginJWT = (user) => {
     }
 
     //get jwt token
-    fetch(`http://localhost:5000/jwt`, {
+    fetch(`https://assignment-11-server-xi.vercel.app/jwt`, {
         method: 'POST',
         headers: {
             'content-type': ' application/json'

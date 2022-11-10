@@ -15,7 +15,7 @@ const MyReviewDetails = ({ revw, handleDelete }) => {
     // console.log(reviewDetails);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://assignment-11-server-xi.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setReviewDetails(data))
     }, [service])
