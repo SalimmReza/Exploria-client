@@ -1,24 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Components/Context/AuthProv';
-import ClipLoader from "react-spinners/ClipLoader";
+import { Audio } from 'react-loader-spinner';
+
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
 
-    // const [isLoading, setIsLoading] = useState(true);
+
+    const [isLoading, setIsLoading] = useState(true);
+    //spinner
     // useEffect(() => {
     //     setIsLoading(true)
     //     setTimeout(() => {
     //         setIsLoading(false)
-    //     }, 5000);
+    //     }, 10000)
     // }, [])
 
 
-
     if (loading) {
-        return <h1 className='text-5xl'>Loading...</h1>
+
+        return <Audio
+            height="80"
+            width="80"
+            radius="9"
+            justify-content="center"
+            align-items="center"
+            display="flex"
+            color="blue"
+            ariaLabel="loading"
+            wrapperStyle
+            wrapperClass
+        />
+
+
+
     }
 
     if (user) {

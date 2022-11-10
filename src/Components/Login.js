@@ -15,7 +15,7 @@ const Login = () => {
     const { loginIn, googleSignIn } = useContext(AuthContext);
 
     const provider = new GoogleAuthProvider();
-    const from = location.state?.from?.pathname || '/allservices';
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleClick = () => {
         googleSignIn(provider)
