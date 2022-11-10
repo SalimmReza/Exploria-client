@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../Hooks/UseTitle";
 import { AuthContext } from "./Context/AuthProv";
+import { setLoginJWT } from "./Utils/LoginToken";
 
 
 
@@ -26,7 +27,7 @@ const Login = () => {
                 console.log(user);
                 setError('');
 
-                // setJWT(user);
+                setLoginJWT(user);
 
                 navigate(from, { replace: true });
 
@@ -57,6 +58,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
+                setLoginJWT(user);
                 navigate(from, { replace: true });
 
             })
@@ -74,7 +76,6 @@ const Login = () => {
     return (
         <div >
             <div className="hero bg-base-200 p-10">
-
                 <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <div className="form-control">

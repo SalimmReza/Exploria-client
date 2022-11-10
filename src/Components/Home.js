@@ -49,18 +49,22 @@ const Home = () => {
                         /> :
 
 
+
+
                         services.map(service => <Service
                             key={service._id}
                             service={service}
                         ></Service>).reverse()
 
 
+
+
                 }
 
 
+
+
                 <h1 className='text-black font-bold text-3xl my-20 text-center'>Our services</h1>
-
-
 
 
                 <div className='flex justify-center items-center'>

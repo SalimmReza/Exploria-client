@@ -10,7 +10,7 @@ const MyReviews = () => {
     useTitle('My-Reviews')
     const notify = () => toast("Deleted Successfully");
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [reviews, setreviews] = useState([]);
     console.log(reviews);
     const [allReviews, setAllReviews] = useState([]);
@@ -24,12 +24,12 @@ const MyReviews = () => {
         )
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
-                    return logOut()
+
                 }
                 return res.json()
             })
             .then(data => setreviews(data))
-    }, [user?.email, logOut])
+    }, [user?.email])
 
 
     const handleDelete = (id) => {
